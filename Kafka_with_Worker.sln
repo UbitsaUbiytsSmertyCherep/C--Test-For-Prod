@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka_with_Worker", "Kafka_with_Worker\Kafka_with_Worker.csproj", "{922939BB-7EF9-40BE-B8BF-E4E7C9AB9C7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka_Worker_Producer", "Kafka_Worker_Producer\Kafka_Worker_Producer.csproj", "{FA8FFF1A-CD85-4482-AF24-E06876F005F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{922939BB-7EF9-40BE-B8BF-E4E7C9AB9C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922939BB-7EF9-40BE-B8BF-E4E7C9AB9C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922939BB-7EF9-40BE-B8BF-E4E7C9AB9C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922939BB-7EF9-40BE-B8BF-E4E7C9AB9C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA8FFF1A-CD85-4482-AF24-E06876F005F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8FFF1A-CD85-4482-AF24-E06876F005F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA8FFF1A-CD85-4482-AF24-E06876F005F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA8FFF1A-CD85-4482-AF24-E06876F005F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,8 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka_with_Worker", "Kafka_with_Worker\Kafka_with_Worker.csproj", "{922939BB-7EF9-40BE-B8BF-E4E7C9AB9C7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka_Consumer", "Kafka_Consumer\Kafka_Consumer.csproj", "{922939BB-7EF9-40BE-B8BF-E4E7C9AB9C7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka_Worker_Producer", "Kafka_Worker_Producer\Kafka_Worker_Producer.csproj", "{FA8FFF1A-CD85-4482-AF24-E06876F005F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka_Producer", "Kafka_Producer\Kafka_Producer.csproj", "{FA8FFF1A-CD85-4482-AF24-E06876F005F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0189EA55-DC90-4EAF-A815-7FFE3D17524F}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka_Contracts", "Kafka_Contracts\Kafka_Contracts.csproj", "{BFD2A254-99E9-45A8-B122-E97E231F5503}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A90B023C-AFEE-4537-B359-95F133B1767C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +27,13 @@ Global
 		{FA8FFF1A-CD85-4482-AF24-E06876F005F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA8FFF1A-CD85-4482-AF24-E06876F005F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA8FFF1A-CD85-4482-AF24-E06876F005F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFD2A254-99E9-45A8-B122-E97E231F5503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD2A254-99E9-45A8-B122-E97E231F5503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD2A254-99E9-45A8-B122-E97E231F5503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD2A254-99E9-45A8-B122-E97E231F5503}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA8FFF1A-CD85-4482-AF24-E06876F005F6} = {A90B023C-AFEE-4537-B359-95F133B1767C}
+		{922939BB-7EF9-40BE-B8BF-E4E7C9AB9C7D} = {A90B023C-AFEE-4537-B359-95F133B1767C}
 	EndGlobalSection
 EndGlobal

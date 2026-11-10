@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option csharp_namespace = "Kafka_with_Worker.Contracts";
-
-message AlertReq{
-  int32 id = 1;
-  repeated string data = 2;
-  string Author = 3;
-}

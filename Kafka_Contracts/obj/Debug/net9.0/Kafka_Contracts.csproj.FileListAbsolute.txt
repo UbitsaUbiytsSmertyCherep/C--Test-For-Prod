@@ -1,0 +1,12 @@
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/bin/Debug/net9.0/Kafka_Contracts.deps.json
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/bin/Debug/net9.0/Kafka_Contracts.dll
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/bin/Debug/net9.0/Kafka_Contracts.pdb
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/Kafka_Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/Kafka_Contracts.AssemblyInfoInputs.cache
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/Kafka_Contracts.AssemblyInfo.cs
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/Kafka_Contracts.csproj.CoreCompileInputs.cache
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/Kafka_Contracts.dll
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/refint/Kafka_Contracts.dll
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/Kafka_Contracts.pdb
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/ref/Kafka_Contracts.dll
+/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/obj/Debug/net9.0/Kafka_Contracts.csproj.AssemblyReference.cache

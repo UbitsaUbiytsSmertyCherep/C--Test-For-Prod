@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3GV05wDBNJI=",
+  "success": true,
+  "projectFilePath": "/Users/denis/RiderProjects/Kafka_Test/Kafka_with_Worker/Kafka_Contracts/Kafka_Contracts.csproj",
+  "expectedPackageFiles": [
+    "/Users/denis/.nuget/packages/google.protobuf/3.37.0-rc1/google.protobuf.3.37.0-rc1.nupkg.sha512",
+    "/Users/denis/.nuget/packages/grpc.tools/2.85.0/grpc.tools.2.85.0.nupkg.sha512"
+  ],
+  "logs": []
+}

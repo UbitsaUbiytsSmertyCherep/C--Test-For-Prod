@@ -106,7 +106,7 @@ public class AlertConsumerWorker: BackgroundService
                             Key = res.Message.Key != null ? Encoding.UTF8.GetBytes(res.Message.Key) : Array.Empty<byte>(),
                             Value = res.Message.Value,
                             Headers = headers
-                        });
+                        },stoppingToken);
                         _logger.LogInformation("[CONSUMER] Bad message have been sent to DLQ Topic");
                         consumer.Commit(res);
                     }

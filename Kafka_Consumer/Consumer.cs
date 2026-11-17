@@ -16,6 +16,20 @@ builder.Services.AddSingleton(new ConsumerConfig
     AutoOffsetReset = AutoOffsetReset.Earliest,
     EnableAutoCommit = false,
 });
+
+
+builder.Services.AddSingleton<IProducer<byte[], byte[]>>(_ =>
+{
+    var conf = new ProducerConfig()
+    {
+        BootstrapServers = "localhost:9092",
+        AllowAutoCreateTopics = false
+    };
+    return new ProducerBuilder<byte[], byte[]>(conf).Build();
+});
+
+
+
 builder.Services.AddDbContext<ConsumerDbContext>(options =>
 {
     options.UseNpgsql(connectionString);

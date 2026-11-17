@@ -1,4 +1,5 @@
 using System.Data.Common;
+using System.Text;
 using Confluent.Kafka;
 using Google.Protobuf;
 using Kafka_Contracts.Contracts;
@@ -18,13 +19,18 @@ public class AlertConsumerWorker: BackgroundService
     private readonly ConsumerConfig _config;
     private readonly string _topicName = "alert-topic";
     private readonly IServiceProvider _serviceProvider;
+    private readonly IProducer<byte[],byte[]> _dlqProducer;
 
 
-    public AlertConsumerWorker(ILogger<AlertConsumerWorker> logger, ConsumerConfig config, IServiceProvider serviceProvider)
+    public AlertConsumerWorker(ILogger<AlertConsumerWorker> logger,
+        ConsumerConfig config,
+        IServiceProvider serviceProvider,
+        IProducer<byte[], byte[]> dlqProducer)
     {
         _logger = logger;
         _config = config;
         _serviceProvider = serviceProvider;
+        _dlqProducer = dlqProducer;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -90,6 +96,18 @@ public class AlertConsumerWorker: BackgroundService
                     catch ( InvalidProtocolBufferException e)
                     {
                         _logger.LogError(e, "[CONSUMER] Invalid Protocol Buffer");
+                        var headers = res.Message.Headers ?? new Headers();
+                        headers.Add("from-topic", Encoding.UTF8.GetBytes(_topicName));
+                        headers.Add("dlq_offset", Encoding.UTF8.GetBytes(res.Offset.Value.ToString()));
+                        headers.Add("dlq_error", Encoding.UTF8.GetBytes(e.Message));
+                        
+                        await _dlqProducer.ProduceAsync("alert-topic-dlq", new Message<byte[], byte[]>()
+                        {
+                            Key = res.Message.Key != null ? Encoding.UTF8.GetBytes(res.Message.Key) : Array.Empty<byte>(),
+                            Value = res.Message.Value,
+                            Headers = headers
+                        });
+                        _logger.LogInformation("[CONSUMER] Bad message have been sent to DLQ Topic");
                         consumer.Commit(res);
                     }
 

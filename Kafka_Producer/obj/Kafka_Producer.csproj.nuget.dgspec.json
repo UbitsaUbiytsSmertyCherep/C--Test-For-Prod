@@ -139,7 +139,15 @@
             },
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
-              "version": "[11.0.0-rc.3.26522.148, )"
+              "version": "[9.0.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [

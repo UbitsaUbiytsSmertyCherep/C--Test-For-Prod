@@ -25,12 +25,15 @@ namespace Kafka_Contracts.Contracts {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChFQcm90b3MvVGVzdC5wcm90byI0CghBbGVydFJlcRIKCgJpZBgBIAEoBRIM",
-            "CgRkYXRhGAIgAygJEg4KBkF1dGhvchgDIAEoCUIcqgIZS2Fma2FfQ29udHJh",
-            "Y3RzLkNvbnRyYWN0c2IGcHJvdG8z"));
+            "CgRkYXRhGAIgAygJEg4KBkF1dGhvchgDIAEoCSJWCgpBbGVydEV2ZW50EhAK",
+            "CGFsZXJ0X2lkGAEgASgJEg0KBXRpdGxlGAIgASgJEhAKCHNldmVyaXR5GAMg",
+            "ASgFEhUKDXRpbWVzdGFtcF91dGMYBCABKANCHKoCGUthZmthX0NvbnRyYWN0",
+            "cy5Db250cmFjdHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Kafka_Contracts.Contracts.AlertReq), global::Kafka_Contracts.Contracts.AlertReq.Parser, new[]{ "Id", "Data", "Author" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Kafka_Contracts.Contracts.AlertReq), global::Kafka_Contracts.Contracts.AlertReq.Parser, new[]{ "Id", "Data", "Author" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Kafka_Contracts.Contracts.AlertEvent), global::Kafka_Contracts.Contracts.AlertEvent.Parser, new[]{ "AlertId", "Title", "Severity", "TimestampUtc" }, null, null, null, null)
           }));
     }
     #endregion
@@ -289,6 +292,315 @@ namespace Kafka_Contracts.Contracts {
           }
           case 26: {
             Author = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class AlertEvent : pb::IMessage<AlertEvent>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AlertEvent> _parser = new pb::MessageParser<AlertEvent>(() => new AlertEvent());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AlertEvent> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Kafka_Contracts.Contracts.TestReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AlertEvent() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AlertEvent(AlertEvent other) : this() {
+      alertId_ = other.alertId_;
+      title_ = other.title_;
+      severity_ = other.severity_;
+      timestampUtc_ = other.timestampUtc_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AlertEvent Clone() {
+      return new AlertEvent(this);
+    }
+
+    /// <summary>Field number for the "alert_id" field.</summary>
+    public const int AlertIdFieldNumber = 1;
+    private string alertId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AlertId {
+      get { return alertId_; }
+      set {
+        alertId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "title" field.</summary>
+    public const int TitleFieldNumber = 2;
+    private string title_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Title {
+      get { return title_; }
+      set {
+        title_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "severity" field.</summary>
+    public const int SeverityFieldNumber = 3;
+    private int severity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Severity {
+      get { return severity_; }
+      set {
+        severity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp_utc" field.</summary>
+    public const int TimestampUtcFieldNumber = 4;
+    private long timestampUtc_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long TimestampUtc {
+      get { return timestampUtc_; }
+      set {
+        timestampUtc_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AlertEvent);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AlertEvent other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AlertId != other.AlertId) return false;
+      if (Title != other.Title) return false;
+      if (Severity != other.Severity) return false;
+      if (TimestampUtc != other.TimestampUtc) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AlertId.Length != 0) hash ^= AlertId.GetHashCode();
+      if (Title.Length != 0) hash ^= Title.GetHashCode();
+      if (Severity != 0) hash ^= Severity.GetHashCode();
+      if (TimestampUtc != 0L) hash ^= TimestampUtc.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AlertId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AlertId);
+      }
+      if (Title.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Title);
+      }
+      if (Severity != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Severity);
+      }
+      if (TimestampUtc != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(TimestampUtc);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AlertId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(AlertId);
+      }
+      if (Title.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Title);
+      }
+      if (Severity != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Severity);
+      }
+      if (TimestampUtc != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(TimestampUtc);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (AlertId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AlertId);
+      }
+      if (Title.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Title);
+      }
+      if (Severity != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Severity);
+      }
+      if (TimestampUtc != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TimestampUtc);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AlertEvent other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AlertId.Length != 0) {
+        AlertId = other.AlertId;
+      }
+      if (other.Title.Length != 0) {
+        Title = other.Title;
+      }
+      if (other.Severity != 0) {
+        Severity = other.Severity;
+      }
+      if (other.TimestampUtc != 0L) {
+        TimestampUtc = other.TimestampUtc;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            AlertId = input.ReadString();
+            break;
+          }
+          case 18: {
+            Title = input.ReadString();
+            break;
+          }
+          case 24: {
+            Severity = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            TimestampUtc = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            AlertId = input.ReadString();
+            break;
+          }
+          case 18: {
+            Title = input.ReadString();
+            break;
+          }
+          case 24: {
+            Severity = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            TimestampUtc = input.ReadInt64();
             break;
           }
         }

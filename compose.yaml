@@ -10,6 +10,7 @@
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U app_user -d alert-db"]
       start_period: 10s
@@ -31,7 +32,7 @@
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
       KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:22029,EXTERNAL://localhost:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT
-      KAFKA_OFFSET_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
@@ -46,6 +47,8 @@
     depends_on:
       kafka:
         condition: service_healthy
-    command: sh -c "/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:22029 --create --if-not-exists --topic alert-topics --partitions 3 --replication-factor 1"
+    command:
+      sh -c "/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:22029 --create --if-not-exists --topic alert-topic --partitions 3 --replication-factor 1 &&
+             /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:22029 --create --if-not-exists --topic alert-topic-dlq --partitions 1 --replication-factor 1"
 volumes:
   pgdata:

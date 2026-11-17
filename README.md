@@ -1,6 +1,8 @@
+# C--Test-For-Prod
+This project was designed just to test my skills and try to work with technologies used in production development, such as: Kafka, PostgreSQL, DI, Protobuf, BackgroundServices and their's hosting
 # Resilient Event-Driven Alerting System (.NET 9 & Apache Kafka)
 
-Отказоустойчивая микросервисная система асинхронного обмена событиями, построенная на платформе **.NET 9**, **Apache Kafka (KRaft)**, **PostgreSQL** и **Protocol Buffers**.
+Отказоустойчивая микросервисная система асинхронного обмена событиями, построенная на платформе **.NET 9**, **Apache Kafka (KRaft)**, **PostgreSQL** и **Protocol Buffers**. 
 
 Проект демонстрирует реализацию промышленных паттернов надежности распределенных систем, обеспечивающих гарантию доставки **At-Least-Once** без потери данных при сбоях сети/БД и строгую идемпотентность обработки событий.
 
